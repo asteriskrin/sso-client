@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SSOController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/sso/login', [SSOController::class, 'getLogin'])->name('sso.login');
+Route::get('/sso/callback', [SSOController::class, 'getCallback'])->name('sso.callback');
+Route::get('/sso/connect', [SSOController::class, 'connect'])->name('sso.connect');
