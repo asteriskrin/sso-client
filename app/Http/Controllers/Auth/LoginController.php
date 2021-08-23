@@ -37,4 +37,11 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /**
+     * Login override
+     */
+    public function login(Request $request) {
+        abort(404);
+    }
 }
